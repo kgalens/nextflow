@@ -12,7 +12,11 @@ This page lists all of the available settings in the {ref}`Nextflow configuratio
 : If `true`, on a successful completion of a run all files in *work* directory are automatically deleted.
 
   :::{warning}
-  The use of the `cleanup` option will prevent the use of the *resume* feature on subsequent executions of that pipeline run. Also, be aware that deleting all scratch files can take a lot of time, especially when using a shared file system or remote cloud storage.
+  The use of the `cleanup` option will prevent the use of the *resume* feature on subsequent executions of that pipeline run. Also, be aware that deleting all scratch files can take a lot of time.
+  :::
+
+  :::{warning}
+  The `cleanup` option will not function when using remote storage systems such as AWS S3, Google Cloud Storage, or Azure Blob Storage.
   :::
 
 `dumpHashes`
@@ -766,7 +770,7 @@ The following settings are available:
 : The maximum size of the local cache used by the Fusion client.
 
 `fusion.containerConfigUrl`
-: The URL from where the container layer provisioning the Fusion client is downloaded. This option is useful to specify a development Fusion version for debugging purposes. 
+: The URL from where the container layer provisioning the Fusion client is downloaded. This option is useful to specify a development Fusion version for debugging purposes.
 
 `fusion.exportStorageCredentials`
 : :::{versionadded} 23.05.0-edge
@@ -778,7 +782,7 @@ The following settings are available:
 : The level of logging emitted by the Fusion client.
 
 `fusion.logOutput`
-: Where the logging output is written. 
+: Where the logging output is written.
 
 `fusion.privileged`
 : :::{versionadded} 23.10.0
@@ -1164,7 +1168,7 @@ The following settings are available:
 : :::{versionadded} 24.09.0-edge
   :::
 : List of project contributors. Should be a list of maps. The following fields are supported in the contributor map:
-  - `name`: the contributor's name 
+  - `name`: the contributor's name
   - `affiliation`: the contributor's affiliated organization
   - `email`: the contributor's email address
   - `github`: the contributor's GitHub URL
